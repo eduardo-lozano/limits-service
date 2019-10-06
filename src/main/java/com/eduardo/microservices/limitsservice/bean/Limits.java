@@ -1,6 +1,7 @@
 package com.eduardo.microservices.limitsservice.bean;
 
-public class LimitConfiguration {
+// This is the bean that will be sent to the client
+public class Limits {
 
 	private int minimum;
 	private int maximum;
@@ -8,12 +9,12 @@ public class LimitConfiguration {
 
 	// All beans like this one that will be sent through the WebService's HttpResponse
 	// to the client, need a default (no-args) constructor (make it protected)
-	protected LimitConfiguration() {
+	protected Limits() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public LimitConfiguration(int minimum, int maximum) {
+	public Limits(int minimum, int maximum) {
 		super();
 		this.minimum = minimum;
 		this.maximum = maximum;
