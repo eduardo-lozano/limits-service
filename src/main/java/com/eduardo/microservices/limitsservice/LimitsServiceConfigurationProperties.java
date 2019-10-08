@@ -3,9 +3,12 @@ package com.eduardo.microservices.limitsservice;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 // From SpringBoot, it automatically goes to the application.properties file, and gets the lines that start
-// with the specified prefix "limits-service". Then turns them into variables we can use. And it does so every
-// time an HttpRequest is sent by the client! No need to reboot the server: if we change the value and save it
-// in the server's application.properties file and make an HttpRequest from a client, it returns the new value.
+// with the specified prefix "limits-service". Then turns them into variables we can use.
+// For the case we have a Config Server active, it goes to the bootstrap.properties file (formerly called
+// application.properties), gets the URI where the Config Server is located, then uses it to get the values(?).
+// And since we added a DevTools dependency in the file pom.xml, it does so every time an HttpRequest is
+// sent by the client! No need to reboot the server: if we change the value and save it in the server's
+// application.properties file and make an HttpRequest from a client, it returns the new value.
 @ConfigurationProperties("limits-service")
 public class LimitsServiceConfigurationProperties {
 
